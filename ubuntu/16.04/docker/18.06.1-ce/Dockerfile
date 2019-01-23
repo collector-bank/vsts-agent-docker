@@ -16,4 +16,6 @@ RUN set -x \
  && chmod +x /usr/local/bin/docker-compose \
  && docker-compose -v
 
+RUN apt-get install unzip
+
 RUN apt-get update
