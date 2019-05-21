@@ -33,13 +33,6 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/* \
  && rm -rf /etc/apt/sources.list.d/*
 
-# Install powershell
-RUN cd /tmp \
-  && curl -s https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb --output packages-microsoft-prod.deb \
-  && dpkg -i packages-microsoft-prod.deb \
-  && apt-get update \
-  && apt-get install -y powershell
-
 # Accept the TEE EULA
 RUN mkdir -p "/root/.microsoft/Team Foundation/4.0/Configuration/TEE-Mementos" \
  && cd "/root/.microsoft/Team Foundation/4.0/Configuration/TEE-Mementos" \
